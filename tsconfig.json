@@ -5,7 +5,10 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    /*
+    @ref https://stackoverflow.com/questions/70526259/ts7006-parameter-event-implicitly-has-an-any-type
+    */
+    "strict": false,
     /* disable strict property initialization.
     @ref https://stackoverflow.com/questions/64874221/property-has-no-initializer-and-is-not-definitely-assigned-in-the-constructor
     */

@@ -6,4 +6,6 @@
    [class]="positiveChange ? 'positive' : 'negative'">
     ${{price}}
   </div>
+  <button (click)="toggleFavorite()"
+  [disabled]="favorite">Add to Favorite</button>
 </div>

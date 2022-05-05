@@ -5,7 +5,34 @@ import { Stock } from 'src/app/model/stock';
 @Component({
   selector: 'app-stock-item',
   templateUrl: './stock-item.component.html',
-  styleUrls: ['./stock-item.component.css']
+  styles: [`
+  .stock-container {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+  }
+  
+  .stock-container .name h3, .stock-container .name h4 {
+    display: inline-block;
+  }
+  
+  .positive {
+    color: green;
+  }
+  
+  .negative {
+    color: red;
+  }
+  
+  .large-change {
+    font-size: 1.2em;
+  }
+  
+  .small-change {
+    font-size: 0.8em;
+  }
+  `]
 })
 export class StockItemComponent implements OnInit {
 

@@ -14,4 +14,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
       this.stockObj = new Stock('Test Stock Company', 'TSC', 85, 80);
   }
+
+  testMethod() {
+    console.log('Test method in AppComponent triggered');
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 
 import { Stock } from 'src/app/model/stock';
 
@@ -7,12 +7,17 @@ import { Stock } from 'src/app/model/stock';
   templateUrl: './stock-item.component.html',
   styleUrls: ['./stock-item.component.css']
 })
-export class StockItemComponent implements OnInit {
+export class StockItemComponent implements OnInit, OnChanges,
+  OnDestroy, DoCheck,
+  AfterContentChecked,
+  AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit {
 
   @Input() public stock: Stock;
   @Output() private toggleFavorite: EventEmitter<Stock>;
 
-  constructor() { 
+  constructor() {
     this.toggleFavorite = new EventEmitter<Stock>();
   }
 
@@ -21,6 +26,34 @@ export class StockItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      
+    console.log('Stock Item Component - On Init');
+  }
+
+  ngAfterViewInit(): void {
+    console.log('Stock Item Component - After View Init');
+  }
+
+  ngAfterViewChecked(): void {
+    console.log('Stock Item Component - After View Checked');
+  }
+
+  ngAfterContentInit(): void {
+    console.log('Stock Item Component - After Content Init');
+  }
+
+  ngAfterContentChecked(): void {
+    console.log('Stock Item Component - After Content Checked');
+  }
+
+  ngDoCheck(): void {
+    console.log('Stock Item Component - Do Check');
+  }
+
+  ngOnDestroy(): void {
+    console.log('Stock Item Component - On Destroy');
+  }
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('Stock Item Component - On Changes - ', changes);
   }
 }
